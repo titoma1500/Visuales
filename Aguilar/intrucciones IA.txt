@@ -1,0 +1,35 @@
+Paso 1: Configuración de la Base de Datos (prueba)
+Vamos a crear las tablas exactamente como las has solicitado en phpMyAdmin.
+Abre phpMyAdmin (http://localhost/phpmyadmin).
+Crea la Base de Datos si no existe: Nombre prueba.
+Crea la tabla usuario:
+Nombre de la tabla: usuario.
+Define las columnas:
+nombre_usuario: Tipo VARCHAR, Longitud 255, Índice PRIMARY. Esta es la clave primaria, no uses auto-incremento.
+clave: Tipo VARCHAR, Longitud 255.
+rol: Tipo VARCHAR, Longitud 50.
+Haz clic en "Guardar".
+Crea la tabla comentario:
+Nombre de la tabla: comentario.
+Define las columnas:
+id_comentario: Tipo INT, Longitud 11, marca la casilla A_I (AUTO_INCREMENT) y asegúrate de que el Índice sea PRIMARY. (Usaremos A_I aquí porque es la práctica estándar para IDs de comentarios y simplifica la eliminación).
+comentario: Tipo TEXT.
+id_usu_comen: Tipo VARCHAR, Longitud 255. Importante: Debe ser VARCHAR para que coincida con nombre_usuario de la tabla usuario.
+Haz clic en "Guardar".
+¡Acción Manual! Inserta el usuario Administrador:
+Selecciona la tabla usuario y ve a la pestaña "Insertar".
+nombre_usuario: admin
+clave: adminpass (o la que prefieras, recuérdala)
+rol: admin
+Haz clic en "Continuar". Tu administrador ya existe en el sistema.
+
+Paso 4: Cómo Probarlo
+Asegúrate de haber creado el usuario admin manualmente en phpMyAdmin.
+Ve a http://localhost/Prueba/ en tu navegador.
+Regístrate: Haz clic en el enlace "Regístrate". Crea un usuario (ej: carlos, clave 1234).
+Inicia sesión como usuario: Usa las credenciales de carlos. Serás llevado al formulario. Envía un par de comentarios.
+Cierra sesión.
+Inicia sesión como admin: Usa admin y la contraseña que le pusiste. Serás llevado al dashboard.
+Verifica: Verás los comentarios de carlos.
+Filtra: Escribe carlos en el buscador y presiona "Buscar". Solo aparecerán sus comentarios.
+Elimina: Usa el botón "Eliminar" en cualquier comentario.
